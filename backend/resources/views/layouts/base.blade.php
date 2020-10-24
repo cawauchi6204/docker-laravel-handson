@@ -11,8 +11,7 @@
     </header>
 
     <main>
-        @include('includes.thread_form')
-        @include('includes.thread_list')
+        @yield('content')
     </main>
 
     <footer>
