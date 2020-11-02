@@ -17,7 +17,7 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('title', 100);
             $table->longtext('content');
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
