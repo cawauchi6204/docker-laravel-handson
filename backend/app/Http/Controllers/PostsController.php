@@ -3,22 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Post;
-use Carbon\Carbon;
+
+use App\Http\Controllers\Controller;
+use App\Models\Post;
 
 class PostsController extends Controller
 {
-  public function store(Request $request)
-  {
-    $now = new Carbon('now');
-    $param = [
-      'title' => $request->title,
-      'content' => $request->content,
-      'created_at' => $now,
-      'updated_at' => $now,
-    ];
-    DB::table('posts')->insert($param);
-    return redirect('/');
+
+  public function hoge() {
+    return 'hoge';
   }
+
+
+
+    public function store(Request $request)
+    {
+        $post = new Post;
+
+        $post->title = $request->title;
+        $post->content = $request->content;
+
+        $post->save();
+        return redirect('/');
+    }
 }

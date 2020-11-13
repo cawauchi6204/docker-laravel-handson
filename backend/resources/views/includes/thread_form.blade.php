@@ -1,5 +1,5 @@
 <section class="top-form-section">
-  <form method="POST" action="{{ url('/') }}">
+  <form method="POST" action="{{ url('/post') }}">
     @csrf
     <div class="form-group w-75 mx-auto">
       <label for="formGroupExampleInput2">タイトル名</label>
