@@ -7,4 +7,4 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::post('post', [PostsController::class,'store'])->name('post');
+Route::post('store', [PostsController::class,'store'])->name('store');
