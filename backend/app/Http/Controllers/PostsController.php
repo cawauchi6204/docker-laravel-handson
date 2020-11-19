@@ -9,14 +9,20 @@ use App\Models\Post;
 
 class PostsController extends Controller
 {
-    public function store(Request $request)
-    {
-        $post = new Post;
+  public function index()
+  {
+    $data = Post::paginate(10);
+    return view('index',compact('data'));
+  }
 
-        $post->title = $request->title;
-        $post->content = $request->content;
+  public function store(Request $request)
+  {
+      $post = new Post;
 
-        $post->save();
-        return redirect('/');
-    }
+      $post->title = $request->title;
+      $post->content = $request->content;
+
+      $post->save();
+      return redirect('/');
+  }
 }
