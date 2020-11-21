@@ -1,6 +1,6 @@
 <header class="header" style="padding-bottom:70px">
     <nav class=" navbar fixed-top navbar-expand-lg navbar-light bg-dark">
-        <a class="navbar-brand text-white" href="#">KZBN</a>
+        <a class="navbar-brand text-white" href="/">KZBN</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
