@@ -28,18 +28,16 @@ class PostsController extends Controller
     return redirect()->route('post.detail',['id' => $id]);
   }
 
-  public function detail(Request $request)
+  public function detail(Request $request,$id)
   {
-    $id = $request->path();
-    // 数字以外除去
-    $id = preg_replace('/[^0-9]/','',$id);
-    $posts_data = Post::findPost($id);
+    $post = new Post();
+    $posts = Post::findPost($id);
 
-    $comment_data = Comment::getComment($id);
+    $comment = Comment::getComment($id);
 
     return view('posts.{id}',[
-      'posts_data' => $posts_data[0],
-      'comment_data' => $comment_data
+      'posts_data' => $posts[0],
+      'comment_data' => $comment
       ]);
   }
 }
