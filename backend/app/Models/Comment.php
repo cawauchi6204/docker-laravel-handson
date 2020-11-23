@@ -9,7 +9,7 @@ class Comment extends Model
 {
   protected $table = 'comment';
 
-  public function scopeGetComment ($query,$id)
+  public function scopeGetCommentById($query,$id)
   {
     return $query->where('posts_id',$id)->get();
   }
