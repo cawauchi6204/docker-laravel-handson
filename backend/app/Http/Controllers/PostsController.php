@@ -24,7 +24,8 @@ class PostsController extends Controller
     $post->content = $request->content;
 
     $post->save();
-    return redirect('/');
+    $id = $post->id;
+    return redirect()->route('post.detail',['id' => $id]);
   }
 
   public function detail(Request $request)
