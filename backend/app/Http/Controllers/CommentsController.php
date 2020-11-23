@@ -18,6 +18,6 @@ class CommentsController extends Controller
     $posts_id = $request->posts_id;
     $comment->posts_id = $posts_id;
     $comment->save();
-    return redirect('/post/' . $posts_id);
+    return redirect()->route('post.detail', ['id' =>$posts_id]);
   }
 }
