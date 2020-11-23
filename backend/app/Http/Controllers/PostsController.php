@@ -31,7 +31,7 @@ class PostsController extends Controller
   public function detail(Request $request,$id)
   {
     $post = new Post();
-    $posts = Post::findPost($id);
+    $posts = Post::findPostById($id);
 
     $comment = Comment::getComment($id);
 

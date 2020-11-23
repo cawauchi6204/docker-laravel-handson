@@ -9,7 +9,7 @@ class Post extends Model
 {
   protected $table = 'posts';
 
-  public function scopeFindPost ($query,$id)
+  public function scopeFindPostById($query,$id)
   {
     return $query->where('id',$id)->get();
   }
