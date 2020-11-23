@@ -12,7 +12,7 @@ class CommentsController extends Controller
 {
   public function store(Request $request)
   {
-    $comment = new Comment;
+    $comment = new Comment();
 
     $comment->content = $request->content;
     $posts_id = $request->posts_id;
