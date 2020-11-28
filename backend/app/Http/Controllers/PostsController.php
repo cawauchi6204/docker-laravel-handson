@@ -30,12 +30,12 @@ class PostsController extends Controller
 
   public function detail(Request $request,$id)
   {
-    $post = Post::findPostById($id);
+    $post = Post::where('id',$id)->first();
 
     $comment = Comment::getCommentById($id);
 
     return view('posts.{id}',[
-      'post' => $post[0],
+      'post' => $post,
       'comment' => $comment
       ]);
   }
