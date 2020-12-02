@@ -2,15 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-  protected $table = 'comment';
+    protected $table = 'comment';
 
-  public function scopeGetCommentById($query,$id)
-  {
-    return $query->where('posts_id',$id)->get();
-  }
+    public function scopeGetCommentById($query, $id)
+    {
+        return $query->where('post_id', $id)->get();
+    }
 }
