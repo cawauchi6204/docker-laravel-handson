@@ -15,8 +15,8 @@ class CreateCommentTable extends Migration
     {
         Schema::create('comment', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('posts_id');
+            $table->integer('user_id')->nullable();
+            $table->integer('post_id');
             $table->longtext('content');
             $table->boolean('deleted')->default(false);
             $table->timestamps();
